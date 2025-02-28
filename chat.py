@@ -117,7 +117,7 @@ def get_random_image():
 
         headers = {"Authorization": f"Client-ID {UNSPLASH_ACCESS_KEY}"}
         response = requests.get(
-            "https://api.unsplash.com/photos/random?orientation=landscape",
+            "https://api.unsplash.com/photos/random?orientation=landscape&query=fun",
             headers=headers
         )
     
