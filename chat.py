@@ -78,7 +78,7 @@ def send_message(user_input=None):
             with st.spinner("Processing..."):
                 try:
                     response = client.chat.completions.create(
-                        model="gpt-3.5-turbo",
+                        model="gpt-4o",
                         messages=messages,
                         temperature=0.7
                     )
