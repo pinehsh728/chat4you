@@ -138,8 +138,8 @@ def get_random_image():
 # 랜덤한 회전 각도와 애니메이션 시간을 생성
 random_rotate = random.randint(360, 1080)  # 360도에서 1080도 사이의 랜덤 각도
 random_duration = random.uniform(2, 4)  # 1.5초에서 3.5초 사이의 랜덤 시간
-random_translate_x = random.randint(50, 150)  # X축으로의 랜덤 이동 거리
-random_translate_y = random.randint(50, 150)  # Y축으로의 랜덤 이동 거리
+random_translate_x = random.randint(0, 10000)  # X축으로의 랜덤 이동 거리
+random_translate_y = random.randint(0, 10000)  # Y축으로의 랜덤 이동 거리
 
 # 스타일 및 애니메이션 설정
 st.markdown(
