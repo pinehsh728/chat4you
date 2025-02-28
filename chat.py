@@ -170,6 +170,26 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+# Google Ads 코드 삽입
+google_ads_code = """
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5835321664423087"
+     crossorigin="anonymous"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="fluid"
+     data-ad-layout-key="-fb+5z+3v-d0+94"
+     data-ad-client="ca-pub-5835321664423087"
+     data-ad-slot="6838352031"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+"""
+# Google Ads 삽입
+st.markdown(google_ads_code, unsafe_allow_html=True)
+
+
+
 # 닉네임 입력 및 채팅 시작
 if not st.session_state.chat_started:
     nickname = st.text_input("누구야?", key="nickname_input")
