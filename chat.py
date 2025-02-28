@@ -189,6 +189,13 @@ google_ads_code = """
 st.markdown(google_ads_code, unsafe_allow_html=True)
 
 
+# HTML 파일 읽어오기
+with open("ads.html", "r") as file:
+    ads_code = file.read()
+
+st.components.v1.html(ads_code, height=100)
+
+
 
 # 닉네임 입력 및 채팅 시작
 if not st.session_state.chat_started:
