@@ -137,7 +137,7 @@ def get_random_image():
 
 # 랜덤한 회전 각도와 애니메이션 시간을 생성
 random_rotate = random.randint(360, 1080)  # 360도에서 1080도 사이의 랜덤 각도
-random_duration = random.uniform(2, 4)  # 1.5초에서 3.5초 사이의 랜덤 시간
+random_duration = random.uniform(4, 8)  # 1.5초에서 3.5초 사이의 랜덤 시간
 random_translate_x = random.randint(0, 10000)  # X축으로의 랜덤 이동 거리
 random_translate_y = random.randint(0, 10000)  # Y축으로의 랜덤 이동 거리
 
@@ -154,8 +154,9 @@ st.markdown(
         box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
     }}
     .fade-out {{
-        animation: spinAndFly {random_duration}s forwards;
+        animation: spinAndFly {random_duration}s cubic-bezier(0.5, 0, 1, 1) forwards;
     }}
+
 
     @keyframes spinAndFly {{
         0% {{ opacity: 1; transform: rotate(0deg) translate(0, 0); }}
