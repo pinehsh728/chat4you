@@ -25,7 +25,7 @@ st.set_page_config(page_title="비밀이야기", page_icon="")
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 # 환경 변수에서 API 키 가져오기
-UNSPLASH_ACCESS_KEY = "5yxo6DTdFyysUkWYW59XbZesHG3KM_lVk-lcIPpxk64"
+
 
 # 세션 상태 초기화
 if "messages" not in st.session_state:
