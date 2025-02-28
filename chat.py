@@ -167,14 +167,14 @@ st.markdown(
 
 # 닉네임 입력 및 채팅 시작
 if not st.session_state.chat_started:
-    nickname = st.text_input("네 이름이 뭐야?", key="nickname_input")
+    nickname = st.text_input("우리를 뭐라고 부르지?", key="nickname_input")
     if nickname:
         st.session_state.nickname = nickname
         st.session_state.chat_started = True
         # 애니메이션 적용
         st.markdown(f"<div class='fade-out'>{nickname}의 우주선이 출발합니다!</div>", unsafe_allow_html=True)
         # 인사 메시지 전송
-        send_message(f"안녕, 나는 {nickname}! 반가워")
+        send_message(f"안녕, {nickname}! 반가워")
 
 # 채팅 이력 표시 및 입력 영역
 if st.session_state.chat_started:
