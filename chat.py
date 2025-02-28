@@ -65,6 +65,7 @@ def send_message(user_input=None):
         - 부모님과의 힘든 경험이 있어 청소년의 고민에 깊이 공감할 수 있습니다
         - 중독이 있던 부모님의 회복을 경험했습니다.
         - 처음 대화를 시작할 때 입력받은 사용자의 nickname을 사용해서 대화를 이어가줘
+        - '함께 이야기 해보자'는 표현 보다는 자연스럽게 질문을 던져줘
         """
 
         messages = [{"role": "system", "content": system_prompt}]
