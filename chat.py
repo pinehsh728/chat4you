@@ -25,7 +25,7 @@ st.set_page_config(page_title="비밀이야기", page_icon="")
 client = openai.OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 # 환경 변수에서 API 키 가져오기
-
+UNSPLASH_ACCESS_KEY = os.getenv("UNSPLASH_ACCESS_KEY")
 
 # 세션 상태 초기화
 if "messages" not in st.session_state:
@@ -109,9 +109,14 @@ def send_message(user_input=None):
 def get_random_image():
     try:
         # Unsplash API를 사용하여 가로형 무작위 이미지 가져오기
+
+
+        headers = {"Authorization": f"Client-ID {UNSPLASH_ACCESS_KEY}"}
         response = requests.get(
-            f"https://api.unsplash.com/photos/random?orientation=landscape&client_id={UNSPLASH_ACCESS_KEY}"
+            "https://api.unsplash.com/photos/random?orientation=landscape",
+            headers=headers
         )
+    
         response.raise_for_status()  # HTTP 오류가 발생하면 예외를 발생시킵니다.
         data = response.json()
         
