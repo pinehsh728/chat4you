@@ -22,7 +22,7 @@ random_emoji = random.choice(emojis)
 st.set_page_config(page_title="비밀이야기", page_icon="")
 
 # API 키 직접 설정
-client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+client = openai.OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 # 환경 변수에서 API 키 가져오기
 
