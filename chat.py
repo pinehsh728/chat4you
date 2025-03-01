@@ -284,3 +284,6 @@ if st.session_state.chat_started:
     # 메시지 입력창은 닉네임이 입력된 후에만 표시
     st.text_input("무슨 이야기가 하고 싶어~", key="user_input", on_change=send_message)
     st.markdown('</div>', unsafe_allow_html=True)
+
+
+<meta name="google-site-verification" content="rV0ntwAXSDuEp5S-QEI8nh4vJo74AIS_fpIFzXTGuzg" />
