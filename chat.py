@@ -295,7 +295,16 @@ if st.session_state.chat_started:
           gtag('js', new Date());        
           gtag('config', 'G-QV3YB9WMBE');
         </script>
+
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {{
+            var scriptTag = document.querySelectorAll("script[src*='googletagmanager']");
+            if (scriptTag.length > 0) {{
+                document.head.insertBefore(scriptTag[0], document.head.firstChild);
+            }}
+        }});
+</script>
         """
 
     # 숨겨진 HTML 요소로 삽입
-    components.html(f"<head>{GA_SCRIPT}</head>", height=0)
+    components.html({GA_SCRIPT}, height=0)
