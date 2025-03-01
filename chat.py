@@ -286,13 +286,13 @@ if st.session_state.chat_started:
     st.markdown('</div>', unsafe_allow_html=True)
 
     
-  st.markdown("""
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QV3YB9WMBE"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-QV3YB9WMBE');
-    </script>
-    """, unsafe_allow_html=True)
+    st.markdown("""
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-QV3YB9WMBE"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-QV3YB9WMBE');
+        </script>
+        """, unsafe_allow_html=True)
