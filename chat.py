@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components
 import openai
 import requests
 from io import BytesIO
@@ -285,8 +286,8 @@ if st.session_state.chat_started:
     st.text_input("무슨 이야기가 하고 싶어~", key="user_input", on_change=send_message)
     st.markdown('</div>', unsafe_allow_html=True)
 
-    
-    st.markdown("""
+    #Google Crawling Code
+    GA_SCRIPT =f"""
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-QV3YB9WMBE"></script>
         <script>
           window.dataLayer = window.dataLayer || [];
@@ -295,4 +296,7 @@ if st.session_state.chat_started:
         
           gtag('config', 'G-QV3YB9WMBE');
         </script>
-        """, unsafe_allow_html=True)
+        """
+
+    # 숨겨진 HTML 요소로 삽입
+    components.html(f"<head>{GA_SCRIPT}</head>", height=0)
