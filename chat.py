@@ -285,7 +285,7 @@ if st.session_state.chat_started:
     st.text_input("무슨 이야기가 하고 싶어~", key="user_input", on_change=send_message)
     st.markdown('</div>', unsafe_allow_html=True)
 
-
-st.markdown("""
-<meta name="google-site-verification" content="rV0ntwAXSDuEp5S-QEI8nh4vJo74AIS_fpIFzXTGuzg" />
-""", unsafe_allow_html=True)
+    
+    st.markdown("""
+    <meta name="google-site-verification" content="rV0ntwAXSDuEp5S-QEI8nh4vJo74AIS_fpIFzXTGuzg" />
+    """, unsafe_allow_html=True)
