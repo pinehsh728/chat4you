@@ -289,5 +289,3 @@ if st.session_state.chat_started:
 st.markdown("""
 <meta name="google-site-verification" content="rV0ntwAXSDuEp5S-QEI8nh4vJo74AIS_fpIFzXTGuzg" />
 """, unsafe_allow_html=True)
-
-st.markdown('<meta name="robots" content="index, follow">', unsafe_allow_html=True)
