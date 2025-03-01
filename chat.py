@@ -291,9 +291,8 @@ if st.session_state.chat_started:
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-QV3YB9WMBE"></script>
         <script>
           window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-        
+          function gtag(){dataLayer.push(arguments);}}
+          gtag('js', new Date());        
           gtag('config', 'G-QV3YB9WMBE');
         </script>
         """
