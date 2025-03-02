@@ -5,6 +5,9 @@ import requests
 from io import BytesIO
 import random
 import os
+from bs4 import BeautifulSoup
+import pathlib
+import shutil
 
 
 # 이모지 목록 정의
@@ -287,7 +290,9 @@ if st.session_state.chat_started:
     st.markdown('</div>', unsafe_allow_html=True)
 
     #Google Crawling Code
-    GA_SCRIPT =f"""
+    GA_ID= "G-QV3YB9WMBE"
+    GA_SCRIPT ="""
+        <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-QV3YB9WMBE"></script>
         <script>
           window.dataLayer = window.dataLayer || [];
@@ -295,16 +300,21 @@ if st.session_state.chat_started:
           gtag('js', new Date());        
           gtag('config', 'G-QV3YB9WMBE');
         </script>
-
-        <script>
-        document.addEventListener("DOMContentLoaded", function() {{
-            var scriptTag = document.querySelectorAll("script[src*='googletagmanager']");
-            if (scriptTag.length > 0) {{
-                document.head.insertBefore(scriptTag[0], document.head.firstChild);
-            }}
-        }});
-</script>
-        """
+    """
 
     # 숨겨진 HTML 요소로 삽입
-    components.html({GA_SCRIPT}, height=0)
+    def inject_ga():
+    
+    index_path = pathlib.Path(st.__file__).parent / "static" / "index.html"
+    soup = BeautifulSoup(index_path.read_text(), features="html.parser")
+    if not soup.find(id=GA_ID): 
+        bck_index = index_path.with_suffix('.bck')
+        if bck_index.exists():
+            shutil.copy(bck_index, index_path)  
+        else:
+            shutil.copy(index_path, bck_index)  
+        html = str(soup)
+        new_html = html.replace('<head>', '<head>\n' + GA_SCRIPT)
+        index_path.write_text(new_html)
+
+    inject_ga()
