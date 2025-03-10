@@ -26,7 +26,7 @@ random_emoji = random.choice(emojis)
 random_emoji = random.choice(emojis)
 
 # 페이지 기본 설정
-st.set_page_config(page_title="비밀이야기", page_icon="")
+st.set_page_config(page_title="이야기를 들어줍니다", page_icon="")
 
 # API 키 직접 설정
 client = openai.OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
@@ -206,7 +206,7 @@ st.components.v1.html(ads_code, height=100)
 
 # 닉네임 입력 및 채팅 시작
 if not st.session_state.chat_started:
-    nickname = st.text_input("누구야?", key="nickname_input")
+    nickname = st.text_input("별명을 알려주세요", key="nickname_input")
     if nickname:
         st.session_state.nickname = nickname
         st.session_state.chat_started = True
